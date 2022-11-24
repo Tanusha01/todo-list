@@ -1,0 +1,13 @@
+:host{
+    .todo-container{
+        padding: 50px ;
+    }
+    .add-button{
+        margin-left: 8px;
+    }
+    .task-list{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
