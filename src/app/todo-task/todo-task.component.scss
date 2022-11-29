@@ -1,7 +1,8 @@
 :host{
     .task-wrapper{
         display: flex;
-        gap:8px;
+        gap: 20px;
+        border: 2px solid rgb(228, 219, 219);
        }
 
     .task-content{
@@ -13,4 +14,9 @@
         text-decoration: line-through;
         opacity: 0.5;
     }
+    .mat-mdc-outlined-button{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
 }

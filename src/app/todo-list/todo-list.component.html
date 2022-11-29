@@ -3,16 +3,36 @@
   <form>
     <mat-form-field>
       <mat-label>Enter a task</mat-label>
-      <input matInput [(ngModel)]="newTask" name="newTask" />
+      <input matInput [(ngModel)]="newTask" name="newTask" value="task" />
     </mat-form-field>
-    <button
-      mat-raised-button
-      color="accent"
-      class="add-button"
-      (click)="addTask()"
-    >
-      Add task
-    </button>
+    <ng-container *ngIf="!editing">
+      <button
+        mat-raised-button
+        color="accent"
+        class="add-button"
+        (click)="addTask()"
+      >
+        Add task
+      </button>
+    </ng-container>
+    <ng-container *ngIf="editing">
+      <button
+        mat-raised-button
+        color="accent"
+        class="add-button"
+        (click)="saveChanges()"
+      >
+        Save
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        class="add-button"
+        (click)="cancel()"
+      >
+        Cancel
+      </button>
+    </ng-container>
   </form>
 
   <div class="task-list">
@@ -20,6 +40,7 @@
       <app-todo-task
         [task]="task"
         (remove)="removeTask($event)"
+        (edit)="editTask($event)"
       ></app-todo-task>
     </ng-container>
   </div>
