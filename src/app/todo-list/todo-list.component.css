@@ -1,0 +1,7 @@
+.todo-title {
+    font-weight: 600;
+  }
+  .todo-title.urgent {
+    color: red;
+  }
+  

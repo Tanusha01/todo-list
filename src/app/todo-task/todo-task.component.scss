@@ -1,22 +1,27 @@
-:host{
-    .task-wrapper{
-        display: flex;
-        gap: 20px;
-        border: 2px solid rgb(228, 219, 219);
-       }
-
-    .task-content{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+:host {
+    .task-wrapper {
+      display: flex;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 8px;
     }
-    .completed{
-        text-decoration: line-through;
-        opacity: 0.5;
+  
+    .task-content {
+      display: flex;
+      gap: 8px;
+      align-items: center;
     }
-    .mat-mdc-outlined-button{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        }
-}
+  
+    .completed {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+  
+    .action-buttons {
+      display: flex;
+      gap: 8px;
+    }
+  }
