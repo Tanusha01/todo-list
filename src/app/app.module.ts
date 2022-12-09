@@ -17,6 +17,7 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatOptionModule } from "@angular/material/core";
 import { TodoProgressComponent } from './todo-progress/todo-progress.component';
+import { TooltipDirective } from './Directives/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TodoProgressComponent } from './todo-progress/todo-progress.component';
     TodoListComponent,
     TodoTaskComponent,
     TaskFormDialogComponent,
-    TodoProgressComponent
+    TodoProgressComponent,
+    TooltipDirective
   ],
   imports: [
     BrowserModule,
