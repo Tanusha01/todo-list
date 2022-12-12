@@ -8,6 +8,9 @@
       <mat-error *ngIf="taskForm.controls.title.hasError('required')">
         Title is required
       </mat-error>
+      <mat-error *ngIf="taskForm.controls.title.hasError('titleValidator')">
+        Title must contain first uppercase symbol and last symbol - point
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field>

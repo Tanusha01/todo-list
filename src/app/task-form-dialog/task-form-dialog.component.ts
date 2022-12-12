@@ -1,8 +1,8 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from "@angular/forms";
 import { Task } from '../types/task.type';
-
+import { titleValidator } from './task-form-dialog/titleValidator';
 @Component({
   selector: 'app-task-form-dialog',
   templateUrl: './task-form-dialog.component.html',
@@ -10,7 +10,9 @@ import { Task } from '../types/task.type';
 })
 export class TaskFormDialogComponent implements OnInit, OnDestroy {
   public taskForm = this.fb.group({
-    title: new FormControl<string>(null, [Validators.required]),
+    title: new FormControl<string>(null, [
+      Validators.required,
+      titleValidator(/[A-Z]{1}[a-z]{2,30}/mg)]),
     description: new FormControl<string>(null, [Validators.maxLength(50)]),
     assignee: new FormControl<string>(null, [Validators.required]),
     isUrgent: new FormControl<boolean>(null),
