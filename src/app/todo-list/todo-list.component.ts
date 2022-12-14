@@ -1,35 +1,36 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Task } from "../types/task.type";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { FormControl, Validators } from "@angular/forms";
 import { MatDialog } from "@angular/material/dialog";
 import { TaskFormDialogComponent } from "../task-form-dialog/task-form-dialog.component";
+import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.scss']
+  styleUrls: ['./todo-list.component.scss'],
+  providers:[TaskService]
 })
-export class TodoListComponent {
-  public taskList: Task[] = [{
-    id: 0,
-    title: 'Task',
-    description: 'Descr',
-    assignee: 'John',
-    isUrgent: false,
-    completed: false
-  }];
+export class TodoListComponent implements OnInit {
+  public taskList: Task[];
   public newTask: string;
   public editing: boolean;
+  public date: Date;
 
   private lastId: number = 0;
   private editedTaskId: number;
-  private users: string[] = ["John", "Alex", 'Bob'];
+  private users: string[];
 
   constructor(
     private _snackBar: MatSnackBar,
-    public dialog: MatDialog) {
+    public dialog: MatDialog,
+    private taskService:TaskService){
   }
+  async ngOnInit(): Promise<void> {
+  this.taskList=await this.taskService.getTasks();
+  this.users = await this.taskService.getUsers();
+ }
 
  // @HostListener('window:keyup.enter')
   showNotification(): void {
