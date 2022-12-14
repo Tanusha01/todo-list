@@ -3,10 +3,12 @@ import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from "@angular/forms";
 import { Task } from '../types/task.type';
 import { titleValidator } from './task-form-dialog/titleValidator';
+import { TaskService } from '../services/task.service';
 @Component({
   selector: 'app-task-form-dialog',
   templateUrl: './task-form-dialog.component.html',
-  styleUrls: ['./task-form-dialog.component.scss']
+  styleUrls: ['./task-form-dialog.component.scss'],
+  providers: [TaskService]
 })
 export class TaskFormDialogComponent implements OnInit, OnDestroy {
   public taskForm = this.fb.group({

@@ -18,6 +18,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatOptionModule } from "@angular/material/core";
 import { TodoProgressComponent } from './todo-progress/todo-progress.component';
 import { TooltipDirective } from './Directives/tooltip.directive';
+import { UrgentPipe } from './pipes/urgent.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TooltipDirective } from './Directives/tooltip.directive';
     TodoTaskComponent,
     TaskFormDialogComponent,
     TodoProgressComponent,
-    TooltipDirective
+    TooltipDirective,
+    UrgentPipe
   ],
   imports: [
     BrowserModule,

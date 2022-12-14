@@ -24,7 +24,7 @@
       </ng-container>
     </div>
 
-    <app-todo-progress [currentNumber]="taskList.length"></app-todo-progress>
+    <app-todo-progress [currentNumber]="taskList?.length"></app-todo-progress>
 
     <div class="task-list">
       <ng-container *ngFor="let task of taskList">
