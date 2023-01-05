@@ -1,0 +1,17 @@
+:host {
+  header {
+    background-color: #282828;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 24px;
+  }
+
+  .logo {
+    color: #fff;
+  }
+
+  .logout {
+    border: none;
+    background-color: #fff;
+  }
+}

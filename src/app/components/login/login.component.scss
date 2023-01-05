@@ -1,0 +1,16 @@
+:host {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 400px
+  }
+}

@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div class="mat-h2">{{ title }}</div>
+
+  <form [formGroup]="taskForm" (ngSubmit)="save()">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput [formControl]="taskForm.controls.title">
+      <mat-error *ngIf="taskForm.controls.title.hasError('required')">
+        Title is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput [formControl]="taskForm.controls.description"></textarea>
+      <mat-error *ngIf="taskForm.controls.description.hasError('maxlength')">
+        Max length is 50 chars
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Assignee</mat-label>
+      <mat-select [formControl]="taskForm.controls.assignee">
+        <mat-option *ngFor="let user of users" [value]="user">
+          {{user}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="taskForm.controls.assignee.hasError('required')">
+        Assignee is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-checkbox [formControl]="taskForm.controls.isUrgent">
+      Urgent
+    </mat-checkbox>
+
+    <div class="buttons">
+      <button mat-flat-button (click)="goBack()">Go back</button>
+      <button type="submit" mat-flat-button color="primary">Save</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+:host {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .not-found-image {
+    width: 400px;
+  }
+}

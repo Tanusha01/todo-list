@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../src/app/styles/tooltip.scss";
+@import "app/todo/styles/tooltip";
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.heading-1 {
+  text-align: center;
+  font-size: 32px !important;
+  font-weight: 500 !important;
+  padding-bottom: 40px;
+}

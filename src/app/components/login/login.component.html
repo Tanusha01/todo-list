@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <h1 class="heading-1">Welcome to TODO</h1>
+  <form class="login-form" [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput [formControl]="form.controls.email">
+      <mat-error *ngIf="form.controls.email.hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="form.controls.email.hasError('invalid')">
+        Invalid email
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matNativeControl [formControl]="form.controls.password">
+      <mat-error *ngIf="form.controls.password.hasError('required')">
+        Password is required
+      </mat-error>
+      <mat-error *ngIf="form.controls.password.hasError('minlength')">
+        Password length must be at list 8 chars
+      </mat-error>
+      <mat-error *ngIf="form.controls.password.hasError('invalid')">
+        Password must include latin letters, numbers and special chars
+      </mat-error>
+    </mat-form-field>
+
+    <button type="submit" mat-flat-button color="primary" (click)="login()">Login</button>
+  </form>
+</div>

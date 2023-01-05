@@ -1,0 +1,24 @@
+:host {
+  .wrapper {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .todo-container {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .add-button {
+    margin-left: 8px;
+  }
+}
